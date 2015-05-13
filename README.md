@@ -1,4 +1,4 @@
-[![Latest Version](https://pypip.in/version/zalando-turnstile/badge.svg)](https://pypi.python.org/pypi/environmental)
+[![Latest Version](https://pypip.in/version/environmental/badge.svg)](https://pypi.python.org/pypi/environmental)
 [![Development Status](https://pypip.in/status/environmental/badge.svg)](https://pypi.python.org/pypi/environmental)
 [![License](https://img.shields.io/pypi/l/environmental.svg)](https://github.com/zalando/environmental/blob/master/LICENSE)
 
