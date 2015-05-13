@@ -9,8 +9,10 @@ Map a python configuration from environment variables.
 Overview
 --------
 **environmental** allows you to map class properties to environment variables.
+
 By using  **environmental** you can keep your configuration in a single class your IDE understands and have convenient
 and safe type conversions between the strings stored in your environment and python types.
+
 The created properties are also writable so if you assign to them they will change on your environment and will be
 available to your child processes.
 
