@@ -11,6 +11,7 @@ setup(
     author='Zalando SE',
     url='https://github.com/zalando/environmental',
     license='Apache License Version 2.0',
+    tests_require=['pytest-cov', 'pytest'],
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 3.4',
