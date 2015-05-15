@@ -2,6 +2,11 @@
    :target: https://travis-ci.org/zalando/environmental
    :alt: Build Status
 
+
+.. image:: https://coveralls.io/repos/zalando/environmental/badge.svg?branch=master
+  :target: https://coveralls.io/r/zalando/environmental?branch=master
+  :alt: Code Coverages
+
 .. image:: https://pypip.in/version/environmental/badge.svg
    :target: https://pypi.python.org/pypi/environmental
    :alt: Latest Version
