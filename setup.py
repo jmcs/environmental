@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import datetime
 import sys
 
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
-VERSION_MAJOR = 0
-VERSION_MINOR = "{:%Y%m%d%H%M%S}".format(datetime.datetime.utcnow())  # Use timestamp as minor version during beta
+VERSION_MAJOR = 1
+VERSION_MINOR = 0
 VERSION = '{VERSION_MAJOR}.{VERSION_MINOR}'.format_map(locals())
 
 
@@ -43,7 +42,7 @@ setup(
     cmdclass={'test': PyTest},
     classifiers=[
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3',
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
