@@ -1,3 +1,7 @@
+.. image:: https://travis-ci.org/zalando/environmental.svg?branch=master
+   :target: https://travis-ci.org/zalando/environmental
+   :alt: Build Status
+
 .. image:: https://pypip.in/version/environmental/badge.svg
    :target: https://pypi.python.org/pypi/environmental
    :alt: Latest Version
