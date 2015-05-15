@@ -2,12 +2,19 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
+import datetime
+
+VERSION_MAJOR = 0
+VERSION_MINOR = "{:%Y%m%d%H%M%S}".format(datetime.datetime.utcnow())  # Use timestamp as minor version during beta
+VERSION = '{VERSION_MAJOR}.{VERSION_MINOR}'.format_map(locals())
+
 
 setup(
     name='environmental',
     packages=find_packages(),
-    version=0,
+    version=VERSION,
     description='Map a python configuration from environment variables',
+    long_description=open('README.rst').read(),
     author='Zalando SE',
     url='https://github.com/zalando/environmental',
     license='Apache License Version 2.0',
