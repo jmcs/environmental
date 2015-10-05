@@ -25,7 +25,10 @@ def __env_property(converter: type, key: str, default=__not_set):
         value = os.environ.get(key, default)
         if value is __not_set:
             raise AttributeError
-        return converter(value)
+        elif value is default:
+            return value
+        else:
+            return converter(value)
 
     def setter(self, value):
         os.environ[key] = str(converter(value))  # use converter to ensure it will store the right type
@@ -41,7 +44,7 @@ def _make_safe(wanted_type: type):
         elif isinstance(representation, str):
             return wanted_type(ast.literal_eval(representation))
         else:
-            raise ValueError
+            raise ValueError("Can't parse '{}' as a '{}'".format(representation, wanted_type.__name__))
     return _safe
 
 
