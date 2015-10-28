@@ -1,3 +1,6 @@
+environmental
+=============
+
 .. image:: https://travis-ci.org/zalando/environmental.svg?branch=master
    :target: https://travis-ci.org/zalando/environmental
    :alt: Build Status
@@ -7,11 +10,11 @@
   :target: https://coveralls.io/r/zalando/environmental?branch=master
   :alt: Code Coverage
 
-.. image:: https://pypip.in/version/environmental/badge.svg
+.. image:: https://img.shields.io/pypi/v/environmental.svg
    :target: https://pypi.python.org/pypi/environmental
    :alt: Latest Version
 
-.. image:: https://pypip.in/status/environmental/badge.svg
+.. image:: https://img.shields.io/pypi/status/environmental.svg
    :target: https://pypi.python.org/pypi/environmental
    :alt: Development Status
 
@@ -19,8 +22,7 @@
    :target: https://github.com/zalando/environmental/blob/master/LICENSE
    :alt: License
 
-environmental
-=============
+
 Map a python configuration from environment variables.
 
 Overview
