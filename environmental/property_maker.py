@@ -9,7 +9,7 @@ def env_property(converter: type, key: str, default=NOT_SET):
     def getter(self):
         value = os.environ.get(key, default)
         if value is NOT_SET:
-            raise AttributeError
+            raise AttributeError('{key} is not set.'.format(key=key))
         elif value is default:
             return value
         else:
