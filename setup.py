@@ -11,7 +11,7 @@ VERSION_MAJOR = 1
 VERSION_MINOR = 2
 VERSION = '{VERSION_MAJOR}.{VERSION_MINOR}'.format_map(locals())
 
-python_version_major, python_version_minor, _ = platform.python_version_tuple()
+python_version_major, python_version_minor = (int(version) for version in platform.python_version_tuple()[:-1])
 
 if python_version_major < 3:
     print("Environmental doesn't support Python 2")
