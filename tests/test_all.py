@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 import os
-
+import pathlib
 import pytest
 
-import environmental
 
+import environmental
 
 class Configuration:
     no_default = environmental.Int('INT_NO_DEFAULT')
@@ -17,6 +17,7 @@ class Configuration:
     set = environmental.Set('SET', {1, 2, 3})
     string = environmental.Str('STR', 'test string')
     tuple = environmental.Tuple('TUPLE', (1, 2, 3))
+    path = environmental.Path('TEST_PATH', pathlib.Path('/path1/'))
 
 
 def test_no_default():
@@ -149,16 +150,14 @@ def test_set():
 def test_tuple():
     config = Configuration()
 
-    assert isinstance(config.tuple, tuple)
-    assert config.tuple == (1, 2, 3)
-    config.tuple = (4, 5)
-    assert isinstance(config.tuple, tuple)
-    assert config.tuple == (4, 5)
-    assert os.environ['TUPLE'] == "(4, 5)"
+    assert isinstance(config.path, pathlib.Path)
+    assert config.path == pathlib.Path('/path1/')
+    assert str(config.path) == '/path1'
+    config.path = pathlib.Path('/path2/')
+    assert config.path == pathlib.Path('/path2/')
+    assert str(config.path) == '/path2'
+    assert os.environ['TEST_PATH'] == '/path2'
 
-    with pytest.raises(ValueError):
-        config.tuple = 'a'
-
-    os.environ['TUPLE'] = 'a'
-    with pytest.raises(ValueError):
-        l = config.tuple
+    os.environ['TEST_PATH'] = '/path3/'
+    assert config.path == pathlib.Path('/path3/')
+    assert str(config.path) == '/path3'
