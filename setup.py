@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import platform
 import sys
 
 from setuptools import setup, find_packages
@@ -10,6 +11,14 @@ VERSION_MAJOR = 1
 VERSION_MINOR = 2
 VERSION = '{VERSION_MAJOR}.{VERSION_MINOR}'.format_map(locals())
 
+python_version_major, python_version_minor, _ = platform.python_version_tuple()
+
+if python_version_major < 3:
+    print("Environmental doesn't support Python 2")
+
+requires = []
+if python_version_major == 3 and python_version_minor < 5:  # if version is below 3.5
+    requires.append('typing')
 
 class PyTest(TestCommand):
 
@@ -38,6 +47,7 @@ setup(
     author='Zalando SE',
     url='https://github.com/zalando/environmental',
     license='Apache License Version 2.0',
+    requires=requires,
     tests_require=['pytest-cov', 'pytest'],
     cmdclass={'test': PyTest},
     classifiers=[
